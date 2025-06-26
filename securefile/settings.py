@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'bootstrap5',
     'axes',
     'core',
+    'cloudinary',            
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -144,10 +146,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'core/static')] # For project-wide st
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
-MEDIA_URL = '/media/'
-# Point MEDIA_ROOT to a persistent disk location provided by Render
-MEDIA_ROOT = config('MEDIA_VOLUME_MOUNT_PATH', default=os.path.join(BASE_DIR, 'media'))
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -190,3 +188,13 @@ LOGGING = {
 
 # Fernet key for file encryption
 FERNET_KEY = config('FERNET_KEY').encode()
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': config('djnimxekn'),
+    'API_KEY': config('661398239653813'),
+    'API_SECRET': config('TeT-PhdKa6nQR8zSHQrOYqqFLPc'),
+}
+
+# Use Cloudinary for media files
+MEDIA_URL = '/media/' # This can stay the same
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
