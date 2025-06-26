@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load bootstrap5 %} {# <-- 1. LOAD THE LIBRARY #}
+
+{% block title %}Register - SecureShare{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg">
+            <div class="card-body p-4">
+                <h2 class="card-title text-center mb-4">Create Your Secure Account</h2>
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    
+                    {# 2. RENDER THE FORM WITH ONE TAG #}
+                    {% bootstrap_form form %}
+                    
+                    <div class="d-grid mt-4">
+                        {# 3. ADD THE BUTTON #}
+                        {% bootstrap_button button_type="submit" content="Register" %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

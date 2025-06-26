@@ -1,0 +1,16 @@
+/* Add custom styles here if needed. For example: */
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    opacity: .65;
+    transform: scale(.85) translateY(-.5rem) translateX(.15rem);
+}
+
+.btn-dark.nav-link {
+    color: rgba(255, 255, 255, 0.55) !important;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0.5rem 1rem;
+}
+
+.btn-dark.nav-link:hover {
+    color: rgba(255, 255, 255, 0.75) !important;
+}

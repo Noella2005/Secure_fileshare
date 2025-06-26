@@ -1,0 +1,7 @@
+django
+python-decouple
+cryptography
+django-axes>=6.0.0
+gunicorn
+dj-database-url
+django-bootstrap-v5

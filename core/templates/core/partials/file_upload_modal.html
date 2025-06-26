@@ -1,0 +1,22 @@
+<div class="modal fade" id="uploadFileModal" tabindex="-1" aria-labelledby="uploadFileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uploadFileModalLabel">Upload a Secure File</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="id_file" class="form-label">Select file to encrypt and upload:</label>
+                        {{ upload_form.file }}
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Upload and Encrypt</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
