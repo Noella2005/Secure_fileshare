@@ -42,12 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary', 
     'bootstrap5',
     'axes',
-    'core',
-    'cloudinary',            
-    'cloudinary_storage',
+    'core',           
+    
 ]
 
 MIDDLEWARE = [
@@ -190,9 +191,9 @@ LOGGING = {
 FERNET_KEY = config('FERNET_KEY').encode()
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': config('djnimxekn'),
-    'API_KEY': config('661398239653813'),
-    'API_SECRET': config('TeT-PhdKa6nQR8zSHQrOYqqFLPc'),
+    'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': config('CLOUDINARY_API_KEY'),
+    'API_SECRET': config('CLOUDINARY_API_SECRET'),
 }
 
 # Use Cloudinary for media files
